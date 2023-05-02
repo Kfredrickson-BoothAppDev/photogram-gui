@@ -38,13 +38,13 @@ a_new_user.save
   
       matching_users = User.where({ :id => the_id })
   
-      the_user = matching_userss.at(0)
+      the_user = matching_users.at(0)
   
       the_user.username = params.fetch("input_username")
   
       the_user.save
   
-      redirect_to("/photos/" + the_user.username.to_s)
+      redirect_to("/users/" + the_user.username.to_s)
   
   end
 

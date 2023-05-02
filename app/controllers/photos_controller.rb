@@ -66,19 +66,18 @@ a_new_photo.save
   
   def comment
 
-    the_id = params.fetch("modify_id")
+    input_photo_id=params.fetch("input_photo_id")
+    input_author_id=params.fetch("input_author_id")
+    input_body=params.fetch("input_body")
+  
+  a_new_comment = Comment.new
+  a_new_comment.body = input_body
+  a_new_comment.author_id = input_author_id
+  a_new_comment.photo_id = input_photo_id
+  
+  a_new_comment.save
 
-    matching_photos = Photo.where({ :id => the_id })
-
-    the_photo = matching_photos.at(0)
-
-    the_photo.image = params.fetch("input_image")
-    the_photo.caption = params.fetch("input_caption")
-
-    the_photo.save
-
-
-    redirect_to("/photos/" + the_photo.id.to_s)
+    redirect_to("/photos/" + input_photo_id.to_s)
   end
   end
   

@@ -21,7 +21,7 @@ get("/insert_photo_record/", { :controller => "photos", :action => "create" })
 
 get("/update_photo/:modify_id", { :controller => "photos", :action => "update" })
 
-get("/update_photo/insert_comment_record/:modify_id", { :controller => "photos", :action => "comment" })
+get("/insert_comment_record/", { :controller => "photos", :action => "comment" })
 
 
 end
